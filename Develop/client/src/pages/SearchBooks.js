@@ -13,7 +13,8 @@ import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
-  // create state for holding returned google api data
+  const [searchInput, setSearchInput] = useState('');
+  const [saveBook, { error }] = useMutation(SAVE_BOOK);
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
   const [searchInput, setSearchInput] = useState('');
